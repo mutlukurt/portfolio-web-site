@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Modern React portfolio website with animations and responsive design",
   "homepage": "https://mutlukurt.github.io/portfolio-web-site",
+  "license": "MIT",
+  "author": "Mutlu Kurt",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
