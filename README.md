@@ -198,7 +198,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - ❌ **Liability** - No warranty or liability
 - ❌ **Warranty** - No warranty provided
 
-Copyright (c) 2024 Mutlu Kurt
+Copyright (c) 2025 Mutlu Kurt
 
 ## 🙏 Acknowledgments
 
