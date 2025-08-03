@@ -211,11 +211,51 @@ Copyright (c) 2025 Mutlu Kurt
 
 ## 🏷️ **Version & Status**
 
-- **Version**: 1.0.0
+- **Version**: 1.1.0 ✨
 - **Status**: Production Ready ✅
 - **License**: MIT License
 - **Author**: Mutlu Kurt
 - **Live Demo**: [https://mutlukurt.github.io/portfolio-web-site](https://mutlukurt.github.io/portfolio-web-site)
+
+## 📋 **Changelog**
+
+### Version 1.1.0 (Latest) - Mobile Responsive Fixes
+**Released**: January 2025
+
+**🔧 Bug Fixes:**
+- **Fixed mobile overflow issues** in Footer component
+- **Newsletter signup section** now fully responsive on all devices
+- **Footer bottom links** no longer extend beyond viewport on mobile
+- **Copyright text** updated to reflect correct author name
+
+**🎨 UI/UX Improvements:**
+- Enhanced mobile layout for social media links section
+- Improved text wrapping and spacing on small screens
+- Better alignment and centering for mobile footer elements
+- Optimized responsive breakpoints for newsletter form
+
+**📱 Mobile Specific Fixes:**
+- Fixed horizontal scrolling issues on mobile devices
+- Prevented text overflow in footer policy links
+- Improved touch targets for better mobile interaction
+- Enhanced responsive behavior across different screen sizes
+
+**🛠 Technical Changes:**
+- Updated CSS classes for better Tailwind responsive utilities
+- Added `whitespace-nowrap` to prevent unwanted text breaking
+- Implemented proper flex wrapping for footer elements
+- Enhanced mobile-first responsive design approach
+
+### Version 1.0.0 - Initial Release
+**Released**: January 2025
+
+**🚀 Initial Features:**
+- Complete React-based portfolio website
+- Modern UI/UX with animations and responsive design
+- Full component architecture with Header, Hero, About, Video, Services, Footer
+- Framer Motion scroll-triggered animations
+- Tailwind CSS styling system
+- GitHub Pages deployment with CI/CD
 
 ---
 
