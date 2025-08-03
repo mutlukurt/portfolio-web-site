@@ -204,9 +204,9 @@ const Footer = () => {
             viewport={{ once: true }}
             className="border-t border-gray-800 pt-12 pb-8"
           >
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
               {/* Social Links */}
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                 <span className="text-gray-400 text-sm font-medium">Follow me:</span>
                 <div className="flex items-center gap-4">
                   {socialLinks.map((social) => (
@@ -226,18 +226,18 @@ const Footer = () => {
               </div>
 
               {/* Newsletter Signup */}
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <span className="text-gray-400 text-sm font-medium whitespace-nowrap">Stay updated:</span>
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="bg-gray-800 border border-gray-700 rounded-full px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-primary-purple transition-colors duration-200 text-sm w-48"
+                    className="bg-gray-800 border border-gray-700 rounded-full px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-primary-purple transition-colors duration-200 text-sm w-full sm:w-48 min-w-0"
                   />
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-primary-purple text-white px-6 py-2 rounded-full font-medium hover:bg-primary-purple/90 transition-colors duration-200 text-sm"
+                    className="bg-primary-purple text-white px-6 py-2 rounded-full font-medium hover:bg-primary-purple/90 transition-colors duration-200 text-sm whitespace-nowrap"
                   >
                     Subscribe
                   </motion.button>
@@ -254,17 +254,17 @@ const Footer = () => {
             viewport={{ once: true }}
             className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           >
-            <div className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
+            <div className="text-gray-400 text-sm text-center md:text-left">
+              © {new Date().getFullYear()} Mutlu Kurt. All rights reserved.
             </div>
-            <div className="flex items-center gap-6 text-sm text-gray-400">
-              <button className="hover:text-primary-yellow transition-colors duration-200">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6 text-sm text-gray-400">
+              <button className="hover:text-primary-yellow transition-colors duration-200 whitespace-nowrap">
                 Privacy Policy
               </button>
-              <button className="hover:text-primary-yellow transition-colors duration-200">
+              <button className="hover:text-primary-yellow transition-colors duration-200 whitespace-nowrap">
                 Terms of Service
               </button>
-              <button className="hover:text-primary-yellow transition-colors duration-200">
+              <button className="hover:text-primary-yellow transition-colors duration-200 whitespace-nowrap">
                 Cookies
               </button>
             </div>
