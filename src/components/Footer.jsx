@@ -255,7 +255,7 @@ const Footer = () => {
             className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           >
             <div className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Mutlu Kurt. All rights reserved.
+              © {new Date().getFullYear()} Mutlu Kurt.
             </div>
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6 text-sm text-gray-400">
               <button className="hover:text-primary-yellow transition-colors duration-200 whitespace-nowrap">
