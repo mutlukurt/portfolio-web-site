@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-web-site">
       <div className="App">
         <Header />
         <main>
