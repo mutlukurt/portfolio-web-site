@@ -7,10 +7,7 @@ const HeroSection = () => {
 
   const handleDownloadCV = () => {
     // In a real implementation, this would download an actual CV file
-    const link = document.createElement('a');
-    link.href = '/path-to-cv.pdf'; // Replace with actual CV path
-    link.download = 'John_Doe_CV.pdf';
-    link.click();
+    alert('CV indirme özelliği aktif değil. Gerçek CV dosyanızı ekleyin.');
   };
 
   const handleContactMe = () => {

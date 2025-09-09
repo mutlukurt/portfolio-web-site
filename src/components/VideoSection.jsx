@@ -94,11 +94,10 @@ const VideoSection = () => {
               playsInline
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
-              poster="/api/placeholder/800/450" // Replace with actual poster image
+              poster="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop"
             >
-              {/* Replace with actual video sources */}
-              <source src="/path-to-your-video.mp4" type="video/mp4" />
-              <source src="/path-to-your-video.webm" type="video/webm" />
+              {/* Demo video - replace with your actual video */}
+              <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
