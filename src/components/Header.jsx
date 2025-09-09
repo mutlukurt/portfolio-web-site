@@ -56,21 +56,7 @@ const Header = () => {
     }
   };
 
-  const handleMobileNavClick = (href) => {
-    // Close menu first
-    setIsMenuOpen(false);
-    
-    // Wait for menu animation to complete, then scroll
-    setTimeout(() => {
-      scrollToSection(href);
-    }, 300);
-  };
-
-  const handleSearchResultClick = (section) => {
-    const href = `#${section}`;
-    setSearchQuery('');
-    setSearchResults([]);
-    
+  const handleNavClick = (href) => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
       setTimeout(() => {
@@ -79,6 +65,13 @@ const Header = () => {
     } else {
       scrollToSection(href);
     }
+  };
+
+  const handleSearchResultClick = (section) => {
+    const href = `#${section}`;
+    setSearchQuery('');
+    setSearchResults([]);
+    handleNavClick(href);
   };
 
   return (
@@ -135,7 +128,7 @@ const Header = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full mt-2 w-64 bg-white rounded-lg shadow-lg border overflow-hidden"
+                  className="absolute top-full mt-2 w-64 bg-white rounded-lg shadow-lg border overflow-hidden z-50"
                 >
                   {searchResults.map((result) => (
                     <button
@@ -170,7 +163,7 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-4">
               {/* Mobile Search */}
@@ -190,7 +183,7 @@ const Header = () => {
                 {navItems.map((item) => (
                   <button
                     key={item.name}
-                    onClick={() => handleMobileNavClick(item.href)}
+                    onClick={() => handleNavClick(item.href)}
                     className="block w-full text-left px-4 py-2 text-gray-700 hover:text-primary-purple hover:bg-soft-blue/20 rounded-md transition-colors duration-200 font-medium"
                   >
                     {item.name}
