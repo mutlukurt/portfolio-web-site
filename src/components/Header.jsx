@@ -44,11 +44,56 @@ const Header = () => {
   }, [searchQuery]);
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Close mobile menu first
     setIsMenuOpen(false);
+    
+    // Small delay to allow menu to close, then scroll
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerHeight = 80; // Account for fixed header
+        const elementPosition = element.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
+  const handleMobileNavClick = (href) => {
+    // Close menu immediately for better UX
+    setIsMenuOpen(false);
+    
+    // Scroll to section with proper offset
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerHeight = 80;
+        const elementPosition = element.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 150);
+  };
+
+  const handleSearchResultClick = (section) => {
+    const href = `#${section}`;
+    setSearchQuery('');
+    setSearchResults([]);
+    
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      setTimeout(() => {
+        scrollToSection(href);
+      }, 150);
+    } else {
+      scrollToSection(href);
+    }
   };
 
   return (
@@ -110,10 +155,7 @@ const Header = () => {
                   {searchResults.map((result) => (
                     <button
                       key={result.id}
-                      onClick={() => {
-                        scrollToSection(`#${result.section}`);
-                        setSearchQuery('');
-                      }}
+                      onClick={() => handleSearchResultClick(result.section)}
                       className="w-full px-4 py-3 text-left hover:bg-soft-blue/20 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
                     >
                       <div className="font-medium text-gray-800">{result.title}</div>
@@ -162,7 +204,7 @@ const Header = () => {
                 {navItems.map((item) => (
                   <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => handleMobileNavClick(item.href)}
                     className="block w-full text-left px-4 py-2 text-gray-700 hover:text-primary-purple hover:bg-soft-blue/20 rounded-md transition-colors duration-200 font-medium"
                   >
                     {item.name}
@@ -177,11 +219,7 @@ const Header = () => {
                   {searchResults.map((result) => (
                     <button
                       key={result.id}
-                      onClick={() => {
-                        scrollToSection(`#${result.section}`);
-                        setSearchQuery('');
-                        setIsMenuOpen(false);
-                      }}
+                      onClick={() => handleSearchResultClick(result.section)}
                       className="block w-full text-left px-4 py-3 bg-gray-50 hover:bg-soft-blue/20 rounded-md transition-colors duration-200"
                     >
                       <div className="font-medium text-gray-800">{result.title}</div>
