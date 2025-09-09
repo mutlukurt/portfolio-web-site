@@ -7,11 +7,27 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'build',
-    assetsDir: 'static'
+    assetsDir: 'static',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
   server: {
     port: 3000,
     host: true,
-    open: true
+    open: true,
+    strictPort: false,
+    hmr: {
+      port: 3001
+    }
+  },
+  preview: {
+    port: 3000,
+    host: true
+  },
+  define: {
+    global: 'globalThis',
   }
 })
