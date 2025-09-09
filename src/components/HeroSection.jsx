@@ -6,8 +6,28 @@ const HeroSection = () => {
   const [showContactModal, setShowContactModal] = useState(false);
 
   const handleDownloadCV = () => {
-    // In a real implementation, this would download an actual CV file
-    alert('CV indirme özelliği aktif değil. Gerçek CV dosyanızı ekleyin.');
+    // Create a simple text CV for demo
+    const cvContent = `MUTLU KURT - Portfolio
+
+Contact: your.email@example.com
+
+SKILLS:
+- React & JavaScript
+- UI/UX Design
+- Web Development
+- Creative Problem Solving
+
+This is a demo CV. Replace with your actual CV file.`;
+    
+    const blob = new Blob([cvContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Mutlu_Kurt_CV.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
   };
 
   const handleContactMe = () => {

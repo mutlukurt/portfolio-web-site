@@ -94,14 +94,11 @@ const VideoSection = () => {
               playsInline
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
-              poster="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop"
             >
-              {/* Demo video - replace with your actual video */}
-              <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              {/* Video sources removed to prevent 404 errors */}
             </video>
 
-            {/* Video Placeholder (shown when no video is loaded) */}
+            {/* Video Placeholder */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary-purple/80 to-primary-yellow/80 flex items-center justify-center">
               <div className="text-center text-white">
                 <motion.div
@@ -111,8 +108,8 @@ const VideoSection = () => {
                 >
                   <FiPlay size={32} />
                 </motion.div>
-                <h3 className="text-2xl font-bold mb-2">Demo Video</h3>
-                <p className="text-white/80">Replace with your actual video content</p>
+                <h3 className="text-2xl font-bold mb-2">Video Showcase</h3>
+                <p className="text-white/80">Add your video content here</p>
               </div>
             </div>
 
