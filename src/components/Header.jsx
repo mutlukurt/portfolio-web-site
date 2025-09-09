@@ -44,41 +44,26 @@ const Header = () => {
   }, [searchQuery]);
 
   const scrollToSection = (href) => {
-    // Close mobile menu first
-    setIsMenuOpen(false);
-    
-    // Small delay to allow menu to close, then scroll
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        const headerHeight = 80; // Account for fixed header
-        const elementPosition = element.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
-      }
-    }, 100);
+    const element = document.querySelector(href);
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const handleMobileNavClick = (href) => {
-    // Close menu immediately for better UX
+    // Close menu first
     setIsMenuOpen(false);
     
-    // Scroll to section with proper offset
+    // Wait for menu animation to complete, then scroll
     setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        const headerHeight = 80;
-        const elementPosition = element.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
-      }
-    }, 150);
+      scrollToSection(href);
+    }, 300);
   };
 
   const handleSearchResultClick = (section) => {
@@ -90,7 +75,7 @@ const Header = () => {
       setIsMenuOpen(false);
       setTimeout(() => {
         scrollToSection(href);
-      }, 150);
+      }, 300);
     } else {
       scrollToSection(href);
     }
@@ -184,6 +169,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
             className="lg:hidden bg-white border-t border-gray-200"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-4">
